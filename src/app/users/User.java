@@ -1,4 +1,4 @@
-package app;
+package app.users;
 
 import java.time.LocalDate;
 
@@ -6,12 +6,8 @@ public class User {
 
     private String id;
     private String email;
-    private String password;
-    private LocalDate createdAt;
-
-    public User(){
-
-    }
+    protected String password;
+    protected LocalDate createdAt;
 
     public User(String text){
         text = "";
@@ -20,6 +16,13 @@ public class User {
         this.setEmail(arr[1]);
         this.setPassword(arr[2]);
         this.setCreatedAt(LocalDate.parse(arr[3]));
+    }
+
+    public User(String id, String email, String password, LocalDate createdAt){
+        this.setUserId(id);
+        this.setEmail(email);
+        this.setPassword(password);
+        this.setCreatedAt(createdAt);
     }
 
 

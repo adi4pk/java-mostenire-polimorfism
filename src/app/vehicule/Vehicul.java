@@ -1,4 +1,4 @@
-package vehicule;
+package app.vehicule;
 
 public class Vehicul {
 
