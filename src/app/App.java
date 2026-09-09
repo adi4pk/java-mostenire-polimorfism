@@ -1,6 +1,16 @@
-package app.vehicule;
+package app;
 
-public class DemoVehicule {
+import app.vehicule.Avion;
+import app.vehicule.Barca;
+import app.vehicule.Masina;
+import app.vehicule.Vehicul;
+//todo:
+// ===========================MOSTENIREA=======
+// A extends B  {} A sn subclasa B sn superclasa
+// A  are acces la toate campurile protected sau public  ale lui B
+// A  este obligata la instantiere sa apeleze constructorul  lui B
+//
+public class App {
 
     public static void main(String[] args) {
 
