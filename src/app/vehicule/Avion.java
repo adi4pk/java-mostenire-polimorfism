@@ -15,7 +15,7 @@ public class Avion extends Vehicul {
 
     @Override
     public void porneste() {
-        System.out.println(getMarca() + ": pornesc turbinele.");
+        System.out.println(super.getMarca() + ": pornesc turbinele.");
     }
 
     @Override

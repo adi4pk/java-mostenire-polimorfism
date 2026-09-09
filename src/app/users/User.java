@@ -10,7 +10,6 @@ public class User {
     protected LocalDate createdAt;
 
     public User(String text){
-        text = "";
         String arr[] = text.split(",");
         this.setUserId(arr[0]);
         this.setEmail(arr[1]);
@@ -58,5 +57,8 @@ public class User {
         this.createdAt = createdAt;
     }
 
+    public String descriereUser(){
+        return id + ", " + email +"," + password +", " + createdAt;
+    }
 
 }
