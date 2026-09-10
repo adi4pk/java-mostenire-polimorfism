@@ -11,10 +11,10 @@ public class User {
 
     public User(String text){
         String arr[] = text.split(",");
-        this.setUserId(arr[0]);
-        this.setEmail(arr[1]);
-        this.setPassword(arr[2]);
-        this.setCreatedAt(LocalDate.parse(arr[3]));
+        this.setUserId(arr[1]);
+        this.setEmail(arr[2]);
+        this.setPassword(arr[3]);
+        this.setCreatedAt(LocalDate.parse(arr[4]));
     }
 
     public User(String id, String email, String password, LocalDate createdAt){
@@ -57,8 +57,8 @@ public class User {
         this.createdAt = createdAt;
     }
 
-    public String descriereUser(){
-        return id + ", " + email +"," + password +", " + createdAt;
+    public String descriere(){
+        return id + "," + email +"," + password +"," + createdAt;
     }
 
 }

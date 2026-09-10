@@ -10,9 +10,9 @@ public class Teacher extends User{
     public Teacher(String text){
         super(text);
         String arr[] = text.split(",");
-        this.setAnAngajare(Integer.parseInt(arr[4]));
-        this.setNume(arr[5]);
-        this.setSalariu(Integer.parseInt(arr[6]));
+        this.setAnAngajare(Integer.parseInt(arr[5]));
+        this.setNume(arr[6]);
+        this.setSalariu(Integer.parseInt(arr[7]));
     }
 
 
@@ -40,8 +40,9 @@ public class Teacher extends User{
         this.salariu = salariu;
     }
 
-    public String descriereTeacher(){
-        return descriereUser()+ ", " + anAngajare + ", " + nume +"," + salariu;
+    @Override
+    public String descriere(){
+        return "TEACHER" + "," + super.descriere()+ "," + anAngajare + "," + nume +"," + salariu;
     }
 
 }

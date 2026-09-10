@@ -22,9 +22,9 @@ public class Student extends User{
     public Student(String text){
         super(text);
         String arr[] = text.split(",");
-        this.setAnInscriere(Integer.parseInt(arr[4]));
-        this.setNume(arr[5]);
-        this.setNrCredite(Integer.parseInt(arr[6]));
+        this.setAnInscriere(Integer.parseInt(arr[5]));
+        this.setNume(arr[6]);
+        this.setNrCredite(Integer.parseInt(arr[7]));
 
     }
 
@@ -54,8 +54,9 @@ public class Student extends User{
         this.nrCredite = nrCredite;
     }
 
-    public String descriereStudent(){
-        return descriereUser()+ ", " + anInscriere + ", " + nume +"," + nrCredite;
+    @Override
+    public String descriere(){
+        return "STUDENT" + "," + super.descriere()+ "," + anInscriere + "," + nume +"," + nrCredite;
     }
 
 }
