@@ -9,6 +9,7 @@ public class Student extends User{
     private String nume;
     private int nrCredite;
 
+    protected String rol = "STUDENT";
 
 
     public Student(String id, String email, String password, LocalDate createdAt, int anInscriere, String nume, int nrCredite){
@@ -57,6 +58,11 @@ public class Student extends User{
     @Override
     public String descriere(){
         return "STUDENT" + "," + super.descriere()+ "," + anInscriere + "," + nume +"," + nrCredite;
+    }
+
+    @Override
+    public String tip(){
+        return "STUDENT";
     }
 
 }

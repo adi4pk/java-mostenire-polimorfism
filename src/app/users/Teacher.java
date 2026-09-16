@@ -45,4 +45,9 @@ public class Teacher extends User{
         return "TEACHER" + "," + super.descriere()+ "," + anAngajare + "," + nume +"," + salariu;
     }
 
+    @Override
+    public String tip(){
+        return "TEACHER";
+    }
+
 }

@@ -9,6 +9,8 @@ public class User {
     protected String password;
     protected LocalDate createdAt;
 
+    protected String rol = "USER";
+
     public User(String text){
         String arr[] = text.split(",");
         this.setUserId(arr[1]);
@@ -59,6 +61,14 @@ public class User {
 
     public String descriere(){
         return id + "," + email +"," + password +"," + createdAt;
+    }
+
+    public String tip(){
+        return "USER";
+    }
+
+    public String eticheta(){
+        return "[" + tip() + "]" + getEmail();
     }
 
 }

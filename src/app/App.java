@@ -1,9 +1,6 @@
 package app;
 
-import app.users.Student;
-import app.users.Teacher;
-import app.users.User;
-import app.users.UserRepository;
+import app.users.*;
 import app.vehicule.Avion;
 import app.vehicule.Barca;
 import app.vehicule.Masina;
@@ -83,15 +80,60 @@ public class App {
 
         //System.out.println(userRepo.returnAllUsers());
 
-        userRepo.showAllUsers();
+//        userRepo.showAllUsers();
+//
+//        userRepo.save();
+//
+//        Teacher t99 = new Teacher("TEACHER,998,TEST.prof@teach.com,prof678,2026-08-30,2022,TEST_TEST,10000");
+//        Student s99 = new Student("STUDENT,999,alex@student.com,pass456,2026-09-06,2025,Test_Student,30");
+//
+//        userRepo.addUser(t99);
+//        userRepo.addUser(s99);
+//        userRepo.showAllUsers();
+
+
+        List<User> listaUseri = new ArrayList<>();
+
+        Student s1 = new Student("STUDENT,001,ana@ex.com,p1,2026-09-01,2024,Ionescu,20");
+        Student s2 = new Student("STUDENT,002,dan@ex.com,p2,2026-09-01,2024,Popescu,18");
+
+        Teacher t1 = new Teacher("TEACHER,007,prof@ex.com,p3,2026-09-03,2015,Dumitru,5000");
+        Teacher t2 = new Teacher("TEACHER,008,ionel@ex.com,p4,2026-09-04,2018,Ionescu,5200");
+
+        Admin a1 = new Admin("ADMIN,010,admin@scoala.com,adm123,2026-09-10,2019,Radu,42");
+
+        List<User> immutableList = List.of(s1, s2, t1, t2, a1);
+
+        listaUseri.addAll(immutableList);
+
+        //for-each
+        for (User u : listaUseri){
+            System.out.println(u.descriere());
+            System.out.println(u.eticheta());
+
+            if (u instanceof Student){
+                System.out.println(((Student) u).getNume() + " are " + ((Student) u).getNrCredite() + " credite.");
+            }
+            if (u instanceof Teacher){
+                System.out.println(((Teacher) u).getNume() + " are salariul " + ((Teacher)u).getSalariu());
+            }
+            if (u instanceof Admin){
+                System.out.println(((Admin)u).getNume() + " administreaza " + ((Admin)u).getNrConturi() + " conturi.");
+
+            }
+        }
+
+        System.out.println(a1.raport("Mr."));
+        System.out.println(a1.raport("Mr.", 2026));
 
         userRepo.save();
 
-        Teacher t99 = new Teacher("TEACHER,998,TEST.prof@teach.com,prof678,2026-08-30,2022,TEST_TEST,10000");
-        Student s99 = new Student("STUDENT,999,alex@student.com,pass456,2026-09-06,2025,Test_Student,30");
+        userRepo.cautaUserDupaId("11");
 
-        userRepo.addUser(t99);
-        userRepo.addUser(s99);
-        userRepo.showAllUsers();
+        Student sTest = new Student("STUDENT,001,ana@ex.com,p1,2026-09-01,2024,Ionescu,20");
+        User u = sTest;
+        System.out.println(sTest.rol);
+        System.out.println(u.rol);
+        System.out.println(((Student) u).rol);
     }
 }

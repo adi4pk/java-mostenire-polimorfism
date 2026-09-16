@@ -1,0 +1,4 @@
+STUDENT,001,ana@ex.com,p1,2026-09-01,2024,Ionescu,20
+STUDENT,002,dan@ex.com,p2,2026-09-01,2024,Popescu,18
+TEACHER,007,prof@ex.com,p3,2026-09-03,2015,Dumitru,5000
+TEACHER,008,ionel@ex.com,p4,2026-09-04,2018,Ionescu,5200
