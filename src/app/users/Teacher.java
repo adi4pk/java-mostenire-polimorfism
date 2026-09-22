@@ -50,4 +50,9 @@ public class Teacher extends User{
         return "TEACHER";
     }
 
+    @Override
+    public String toString(){
+        return "TEACHER" + "," + super.toString() + "," +anAngajare + "," + nume + "," + salariu;
+    }
+
 }

@@ -39,8 +39,7 @@ public class UserRepository {
             return;
         }
 
-        try{
-            Scanner scanner = new Scanner(file);
+        try (Scanner scanner = new Scanner(file)){      //scanner trebuie inchis in try()
             while (scanner.hasNextLine()){
              String line = scanner.nextLine().trim();
              String type= line.split(",")[0];
@@ -76,10 +75,23 @@ public class UserRepository {
     }
 
 
+    public int numarStudent(){
+
+        int i = 0;
+
+        for (User u: users){
+            if (u instanceof Student){
+                i++;
+            }
+        }
+
+        return i;
+    }
+
     public void save(){
         StringBuilder content = new StringBuilder();
         for (User u : users){
-            content.append(u.descriere()).append(System.lineSeparator());
+            content.append(u.toString()).append(System.lineSeparator());
         }
 
         try (PrintWriter writer = new PrintWriter(FILE_PATH)){

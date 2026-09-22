@@ -30,6 +30,10 @@ public class Student extends User{
     }
 
 
+    @Override
+    public String getRol() {
+        return rol;
+    }
 
     public int getAnInscriere() {
         return anInscriere;
@@ -65,4 +69,9 @@ public class Student extends User{
         return "STUDENT";
     }
 
+
+    @Override
+    public String toString(){
+        return "STUDENT" + "," + super.toString() + "," +anInscriere + "," + nume + "," + nrCredite;
+    }
 }

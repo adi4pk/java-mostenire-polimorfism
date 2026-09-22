@@ -49,11 +49,19 @@ public class Admin extends User{
         return "ADMIN";
     }
 
+    //SUPRAINCARCARE -- overloading
     public String raport (String titlu){
         return titlu + ": " + nume;
     }
 
+    //nr parametri din metoda - semnatura metodei
     public String raport(String titlu, int an){
         return titlu + ": " + nume + ", " + an;
     }
+
+    @Override
+    public String toString(){
+        return "ADMIN" + "," + super.toString() + "," +anAngajare + "," + nume + "," + nrConturi;
+    }
+
 }

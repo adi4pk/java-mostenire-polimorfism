@@ -26,6 +26,9 @@ public class User {
         this.setCreatedAt(createdAt);
     }
 
+    public String getRol() {
+        return rol;
+    }
 
     public String getUserId() {
         return id;
@@ -71,4 +74,8 @@ public class User {
         return "[" + tip() + "]" + getEmail();
     }
 
+    @Override
+    public String toString() {
+         return id + "," + email +"," + password +"," + createdAt;
+    }
 }

@@ -1,14 +1,12 @@
 package app;
 
+import app.OrarScheduler.*;
+import app.formeGeometrice.Punct;
 import app.users.*;
-import app.vehicule.Avion;
-import app.vehicule.Barca;
-import app.vehicule.Masina;
-import app.vehicule.Vehicul;
-
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
+import java.util.Optional;
 
 //todo:
 // ===========================MOSTENIREA=======
@@ -28,10 +26,66 @@ import java.util.List;
 //   Early Binding and Late Binding
 //   early binding => functia se leaga de corp la compilare
 //   late  binding =>functia se leaga de corb la rulare
-//
+//   Anotarea @Override
 public class App {
 
     public static void main(String[] args) {
+
+//        Student s1 = new Student("STUDENT,001,ana@ex.com,p1,2026-09-01,2024,Ionescu,20");
+//
+//
+//        Object obj=s1;
+//
+//
+//        System.out.println(s1);
+//
+//
+//        UserRepository userRepository = new UserRepository();
+//
+//        Student s2 = new Student("STUDENT,999,test@ex.com,p1,2026-09-01,2024,TEST,20");
+//
+//        userRepository.addUser(s1);
+//        userRepository.addUser(s2);
+//
+//        userRepository.loadData();
+//
+//        System.out.println(userRepository.returnAllUsers());
+
+
+//        exFormeGeometrice();
+        exOrar();
+    }
+
+
+    public static void exFormeGeometrice(){
+
+        Punct punct1 = new Punct(20, 25);
+        Punct punct2 = new Punct(20, 25);
+
+        System.out.println(punct1.equals(punct2));
+
+    }
+
+    public static void exOrar(){
+
+        System.out.println("test");
+        Orar orar1 = new Orar();
+        Interval curs = new OraCurs(10, 60, "Engleza", "124B");
+        Interval pauza = new Pauza(13, 60);
+        Interval activitate = new ActivitateLibera(14, 60, "Sport", "TerenFotbal");
+
+        orar1.adaugaInterval(curs);
+        orar1.adaugaInterval(pauza);
+        orar1.adaugaInterval(activitate);
+
+        System.out.println(orar1.decalareOrar(65));
+
+        Interval copieCurs = new OraCurs((OraCurs) curs);
+        System.out.println(copieCurs.getClass());
+    }
+
+
+    public  static void  ex(){
 
 //        Student s1 = new Student("001,studentMail@ex.com,parola123,2026-09-09,2024,Ionescu,20");
 //        Student s2 = new Student("002,maria.popescu@ex.com,parola234,2024-09-01,2024,Popescu,19");
@@ -102,10 +156,11 @@ public class App {
 
         Admin a1 = new Admin("ADMIN,010,admin@scoala.com,adm123,2026-09-10,2019,Radu,42");
 
+        //ex2
         List<User> immutableList = List.of(s1, s2, t1, t2, a1);
-
         listaUseri.addAll(immutableList);
 
+        //ex3
         //for-each
         for (User u : listaUseri){
             System.out.println(u.descriere());
@@ -123,17 +178,20 @@ public class App {
             }
         }
 
-        System.out.println(a1.raport("Mr."));
-        System.out.println(a1.raport("Mr.", 2026));
+        System.out.println(a1.raport("Dl."));
+        System.out.println(a1.raport("Dl.", 2026));
 
-        userRepo.save();
+//        userRepo.save();
 
-        userRepo.cautaUserDupaId("11");
+        //ex6
+        Optional<User> user11 = userRepo.cautaUserDupaId("11");
 
         Student sTest = new Student("STUDENT,001,ana@ex.com,p1,2026-09-01,2024,Ionescu,20");
         User u = sTest;
-        System.out.println(sTest.rol);
-        System.out.println(u.rol);
-        System.out.println(((Student) u).rol);
+        System.out.println(u.descriere());
+        System.out.println(sTest.getRol());
+        System.out.println(u.getRol());
+        System.out.println(((Student) u).getRol());
+
     }
 }
