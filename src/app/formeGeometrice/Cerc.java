@@ -7,6 +7,12 @@ public class Cerc extends Figura{
     private int raza;
 
 
+    public Cerc(Punct punct, int raza){
+        this.setPunct(punct);
+        this.setRaza(raza);
+    }
+
+
     public Punct getPunct() {
         return punct;
     }
@@ -24,8 +30,25 @@ public class Cerc extends Figura{
     }
 
 
+
+
     @Override
     public String toString(){
         return "Punct: " + punct.toString() + ", " + "raza: " + this.getRaza();
+    }
+
+    @Override
+    public void afisare(){
+        System.out.println(this);
+    }
+
+    @Override
+    public void translate(int x, int y){
+        this.punct.translate(x,y);
+    }
+
+    @Override
+    public Figura duplicare(){
+        return new Cerc(punct, raza);
     }
 }

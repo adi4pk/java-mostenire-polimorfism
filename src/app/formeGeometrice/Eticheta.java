@@ -1,20 +1,12 @@
 package app.formeGeometrice;
 
-public class Eticheta extends Figura{
+public class Eticheta extends Dreptunghi{
 
     //proprietati - 2 puncte ce definesc un Dreptunghi  + textul dintre ele
 
-    private Punct punct1;
+    private Dreptunghi dreptunghi;
     private String text;
-    private Punct punct2;
 
-    public Punct getPunct1() {
-        return punct1;
-    }
-
-    public void setPunct1(Punct punct1) {
-        this.punct1 = punct1;
-    }
 
     public String getText() {
         return text;
@@ -24,23 +16,49 @@ public class Eticheta extends Figura{
         this.text = text;
     }
 
-    public Punct getPunct2() {
-        return punct2;
+    public Dreptunghi getDreptunghi() {
+        return dreptunghi;
     }
 
-    public void setPunct2(Punct punct2) {
-        this.punct2 = punct2;
+    public void setDreptunghi(Dreptunghi dreptunghi) {
+        this.dreptunghi = dreptunghi;
+    }
+
+    public Eticheta(Dreptunghi dreptunghi, String text){
+        super(dreptunghi.getPunctA(), dreptunghi.getPunctB());
+        //avem nevoie de super() pentru ca Eticheta mosteneste Dreptunghi si trebuie initializata partea mostenita.
+        //daca clasa din care mostenim nu are un constructor definit, NU este nevoie de super() -- e.g. Figura
+
+        this.setDreptunghi(dreptunghi);
+        this.setText(text);
     }
 
     public Eticheta(Punct punct1, String text, Punct punct2){
+        super(punct1, punct2);
 
         this.setText(text);
-        Dreptunghi dreptunghi = new Dreptunghi(punct1, punct2);
+//        Dreptunghi dreptunghi = new Dreptunghi(punct1, punct2);
 
     }
 
     @Override
     public String toString(){
-        return "Eticheta: " + punct1.toString() + " " +text + " " +punct2.toString();
+        return "Eticheta: " + dreptunghi.toString() + text;
+    }
+
+    @Override
+    public void afisare(){
+        System.out.println(this);
+    }
+
+    @Override
+    public void translate(int x, int y){
+        dreptunghi.translate(x,y);
+    }
+
+
+    @Override
+    public Dreptunghi duplicare(){
+        return new Eticheta(dreptunghi, text);
     }
 }

@@ -25,7 +25,7 @@ public class ActivitateLibera extends Interval{
 
     @Override
     public String getTipInterval(){
-        return "ACTIVITATII";
+        return "ACTIVITATE";
     }
 
 
@@ -45,6 +45,23 @@ public class ActivitateLibera extends Interval{
         this.locDesfasurare = locDesfasurare;
     }
 
+
+    @Override
+    public String afisare(){
+        int ora = super.getOraInceput();
+
+        if(getDurataMin() >= 60){
+
+            int minute = super.getDurataMin() % 60;
+            int incrementareOre = super.getDurataMin() / 60;
+
+            ora += incrementareOre;
+            return this.getTipInterval() + ": " + "ora " + ora + ":" + minute +" " + this.getDenumire() + " " + this.getLocDesfasurare();
+
+        }
+        return this.getClass() + ": " + "ora " + ora + ":" + this.getDurataMin() +" " + this.getDenumire() + " " + this.getLocDesfasurare();
+
+    }
 
     @Override
     public Interval duplicate(){

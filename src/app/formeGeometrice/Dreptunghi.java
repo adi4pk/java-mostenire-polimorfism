@@ -32,6 +32,23 @@ public class Dreptunghi extends Figura{
 
     @Override
     public String toString(){
-        return "Dreptunghi cu punctele: " + "A: " + punctA.toString() + " si B: " + punctB.toString();
+        return "Dreptunghi cu punctele: " + "A - " + punctA.toString() + " si B - " + punctB.toString();
+    }
+
+
+    @Override
+    public void afisare(){
+        System.out.println(this);
+    }
+
+    @Override
+    public void translate(int x, int y){
+        this.punctA.translate(x, y);
+        this.punctB.translate(x, y);
+    }
+
+    @Override
+    public Figura duplicare(){
+        return new Dreptunghi(punctA, punctB);
     }
 }

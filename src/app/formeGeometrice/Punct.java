@@ -13,6 +13,9 @@ public class Punct extends Figura{
         this.setY(y);
     }
 
+
+
+
     public int getX() {
         return x;
     }
@@ -34,8 +37,9 @@ public class Punct extends Figura{
 
     @Override
     public String toString(){
-        return "X: " + x + "; " + "Y: " +y;
+        return "X:" + x + "," + "Y:" +y;
     }
+
 
 
     @Override
@@ -44,6 +48,10 @@ public class Punct extends Figura{
         return x == punctDeComparat.x && y == punctDeComparat.y;
     }
 
+    @Override
+    public void afisare(){
+        System.out.println(this);
+    }
 
     @Override
     public void translate(int x,int y){
@@ -52,12 +60,8 @@ public class Punct extends Figura{
         this.setY(y);
     }
 
-    public void translateX(int x){
-        this.setX(x);
-    }
-
-    public void translateY(int y){
-        this.setY(y);
+    public Figura duplicare(){
+        return new Punct(x,y);
     }
 
 }

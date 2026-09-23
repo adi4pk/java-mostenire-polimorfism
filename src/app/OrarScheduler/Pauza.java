@@ -14,6 +14,16 @@ public class Pauza extends Interval{
         super(copiePauza);
     }
 
+    @Override
+    public String getTipInterval(){
+        return "PAUZA";
+    }
+
+
+    @Override
+    public String afisare(){
+        return this.getClass() + ": " + "ora " + this.getOraInceput() + this.getDurataMin();
+    }
 
     @Override
     public Interval duplicate(){

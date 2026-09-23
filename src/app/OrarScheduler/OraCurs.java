@@ -21,8 +21,13 @@ public class OraCurs extends Interval{
     }
 
     @Override
+    public String afisare(){
+        return this.getClass() + ": " + "ora " + this.getOraInceput() + this.getDurataMin() + this.getMaterie() + this.getSala();
+    }
+
+    @Override
     public String getTipInterval(){
-        return "CURSULUI";
+        return "CURS";
     }
 
     public String getMaterie() {

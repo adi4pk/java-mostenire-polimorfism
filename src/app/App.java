@@ -1,12 +1,10 @@
 package app;
 
 import app.OrarScheduler.*;
-import app.formeGeometrice.Punct;
+import app.formeGeometrice.*;
 import app.users.*;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
-import java.util.Optional;
+
+import java.util.*;
 
 //todo:
 // ===========================MOSTENIREA=======
@@ -62,7 +60,29 @@ public class App {
         Punct punct1 = new Punct(20, 25);
         Punct punct2 = new Punct(20, 25);
 
+        Punct punct3 = new Punct(35, 0);
+        Punct punct4 = new Punct(55, 55);
+
         System.out.println(punct1.equals(punct2));
+
+        Figura linie1 = new Linie(punct1, punct2);
+        linie1.afisare();
+
+        Punct copiePunct1 = (Punct) punct1.duplicare();
+        copiePunct1.setX(90);
+
+        punct1.afisare();
+        copiePunct1.afisare();
+
+        Figura dreptunghi1 = new Dreptunghi(punct1, punct2);
+        Figura dreptunghi2 = new Dreptunghi(punct3, punct4);
+        Figura eticheta1 = new Eticheta((Dreptunghi) dreptunghi2, "test");
+
+        List<Figura> arrFiguri = new ArrayList<>();
+        Collections.addAll(arrFiguri, linie1, dreptunghi1, dreptunghi2, eticheta1);
+
+        Figura desen = new Desen(arrFiguri);
+        desen.afisare();
 
     }
 
@@ -72,7 +92,7 @@ public class App {
         Orar orar1 = new Orar();
         Interval curs = new OraCurs(10, 60, "Engleza", "124B");
         Interval pauza = new Pauza(13, 60);
-        Interval activitate = new ActivitateLibera(14, 60, "Sport", "TerenFotbal");
+        Interval activitate = new ActivitateLibera(14, 200, "Sport", "TerenFotbal");
 
         orar1.adaugaInterval(curs);
         orar1.adaugaInterval(pauza);
@@ -82,6 +102,8 @@ public class App {
 
         Interval copieCurs = new OraCurs((OraCurs) curs);
         System.out.println(copieCurs.getClass());
+
+        orar1.afisare();
     }
 
 

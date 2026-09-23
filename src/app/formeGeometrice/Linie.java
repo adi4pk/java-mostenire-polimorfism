@@ -39,10 +39,19 @@ public class Linie extends Figura{
 
     @Override
     public void translate(int x, int y){
-        this.getPunctA().setX(x);
-        this.getPunctA().setY(y);
+        this.punctA.translate(x,y);
+        this.punctB.translate(x,y);
+    }
 
-        this.getPunctB().setX(x);
-        this.getPunctB().setY(y);
+    @Override
+    public void afisare(){
+        System.out.println(this);
+    }
+
+
+
+    @Override
+    public Figura duplicare(){
+        return new Linie(punctA, punctB);
     }
 }

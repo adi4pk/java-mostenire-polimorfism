@@ -40,6 +40,10 @@ public class Interval {
         return "";
     }
 
+    public String afisare(){
+        return "";
+    }
+
     public void decalare(int nrMinute){
         int decalajInMinute = (getOraInceput() * 60) + nrMinute;
         int oraDecalata = decalajInMinute/60;
@@ -49,11 +53,11 @@ public class Interval {
 
 
         if(decalajInMinute % 60 == 0){
-            System.out.println("Orarul a fost decalat. Noua ora de incepere a " + getTipInterval() + " este " + "ora " + oraDecalata + ":" +minDecalate);
+            System.out.println("Orarul a fost decalat. Noua ora de incepere " + getTipInterval() + " este " + "ora " + oraDecalata + ":" +minDecalate);
 
         }
         else{
-            System.out.println("Orarul a fost decalat. Noua ora de incepere a " + getTipInterval() + " este " + "ora " + oraDecalata + ":" +minDecalate + "0");
+            System.out.println("Orarul a fost decalat. Noua ora de incepere " + getTipInterval() + " este " + "ora " + oraDecalata + ":" +minDecalate + "0");
 
         }
     }
