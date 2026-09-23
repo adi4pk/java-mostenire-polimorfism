@@ -48,18 +48,7 @@ public class ActivitateLibera extends Interval{
 
     @Override
     public String afisare(){
-        int ora = super.getOraInceput();
-
-        if(getDurataMin() >= 60){
-
-            int minute = super.getDurataMin() % 60;
-            int incrementareOre = super.getDurataMin() / 60;
-
-            ora += incrementareOre;
-            return this.getTipInterval() + ": " + "ora " + ora + ":" + minute +" " + this.getDenumire() + " " + this.getLocDesfasurare();
-
-        }
-        return this.getClass() + ": " + "ora " + ora + ":" + this.getDurataMin() +" " + this.getDenumire() + " " + this.getLocDesfasurare();
+        return super.afisare() + this.getDenumire() + " " + this.getLocDesfasurare();
 
     }
 

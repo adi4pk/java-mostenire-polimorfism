@@ -91,17 +91,18 @@ public class App {
         System.out.println("test");
         Orar orar1 = new Orar();
         Interval curs = new OraCurs(10, 60, "Engleza", "124B");
-        Interval pauza = new Pauza(13, 60);
-        Interval activitate = new ActivitateLibera(14, 200, "Sport", "TerenFotbal");
+        Interval pauza = new Pauza(13, 0);
+        Interval activitate = new ActivitateLibera(14, 1000, "Sport", "TerenFotbal");
 
         orar1.adaugaInterval(curs);
         orar1.adaugaInterval(pauza);
         orar1.adaugaInterval(activitate);
 
-        System.out.println(orar1.decalareOrar(65));
+        System.out.println(orar1.decalareOrar(5));
 
         Interval copieCurs = new OraCurs((OraCurs) curs);
         System.out.println(copieCurs.getClass());
+        System.out.println("\n");
 
         orar1.afisare();
     }

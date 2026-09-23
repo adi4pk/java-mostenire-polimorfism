@@ -22,7 +22,7 @@ public class Pauza extends Interval{
 
     @Override
     public String afisare(){
-        return this.getClass() + ": " + "ora " + this.getOraInceput() + this.getDurataMin();
+        return super.afisare();
     }
 
     @Override

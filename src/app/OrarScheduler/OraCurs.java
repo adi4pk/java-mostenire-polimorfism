@@ -20,9 +20,15 @@ public class OraCurs extends Interval{
         this.setSala(copieOraCurs.getSala());
     }
 
+//    @Override
+//    public String afisare(){
+//        return this.getClass() + ": " + "ora " + this.getOraInceput() + this.getDurataMin() + this.getMaterie() + this.getSala();
+//    }
+
+
     @Override
     public String afisare(){
-        return this.getClass() + ": " + "ora " + this.getOraInceput() + this.getDurataMin() + this.getMaterie() + this.getSala();
+        return super.afisare() + this.getMaterie() + " " + this.getSala();
     }
 
     @Override
