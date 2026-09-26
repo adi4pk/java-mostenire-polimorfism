@@ -94,6 +94,8 @@ public class App {
         Interval pauza = new Pauza(13, 0);
         Interval activitate = new ActivitateLibera(14, 1000, "Sport", "TerenFotbal");
 
+        Interval curs2 = new OraCurs(20, 60, "Matematica", "75A");
+
         orar1.adaugaInterval(curs);
         orar1.adaugaInterval(pauza);
         orar1.adaugaInterval(activitate);

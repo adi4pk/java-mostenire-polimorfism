@@ -64,11 +64,13 @@ public class Interval {
     public void decalare(int nrMinute){
         int decalajInMinute = (getOraInceput() * 60) + nrMinute;
 
-        if (getOraInceput() *60 +nrMinute > 1440){
 
-        }
         int oraDecalata = decalajInMinute/60;
         int minDecalate = decalajInMinute % 60;
+
+        if (getOraInceput() *60 +nrMinute > 1440){
+            oraDecalata = 0;
+        }
 
         this.setOraInceput(oraDecalata);
 
